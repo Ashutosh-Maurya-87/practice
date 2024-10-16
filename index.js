@@ -42,3 +42,26 @@ window.addEventListener('scroll', () => {
 
     }, 1000)
 })
+
+const n = 6
+const arr = [1,2,-8,0,5,-8]
+let neg = 0
+let zero = 0
+let positive = 0
+const test = (arr) => {
+   return arr.forEach(item => {
+
+        if (item < 0) {
+            return neg++;
+        } else if (item === 0) {
+           return zero++;
+        } else if(item > 0) {
+           return positive++;
+        }
+    })
+
+}
+
+let res = test(arr)
+let positiveRes = (res / n).toFixed(6)
+console.log('po', positiveRes, res ,neg, zero, positive)
