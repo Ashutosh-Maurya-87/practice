@@ -36,7 +36,7 @@ window.addEventListener('scroll', () => {
 
     // debouncing, when we scroll then count is increases after end of scroll and start of scroll again
     clearTimeout(interval)
-   interval = setTimeout(() => {
+    interval = setTimeout(() => {
         d_count++;
         debounceDiv.innerHTML = `debounce count is : ${d_count}`
 
@@ -44,19 +44,19 @@ window.addEventListener('scroll', () => {
 })
 
 const n = 6
-const arr = [1,2,-8,0,5,-8]
+const arr = [1, 2, -8, 0, 5, -8]
 let neg = 0
 let zero = 0
 let positive = 0
 const test = (arr) => {
-   return arr.forEach(item => {
+    return arr.forEach(item => {
 
         if (item < 0) {
             return neg++;
         } else if (item === 0) {
-           return zero++;
-        } else if(item > 0) {
-           return positive++;
+            return zero++;
+        } else if (item > 0) {
+            return positive++;
         }
     })
 
@@ -64,4 +64,133 @@ const test = (arr) => {
 
 let res = test(arr)
 let positiveRes = (res / n).toFixed(6)
-console.log('po', positiveRes, res ,neg, zero, positive)
+console.log('po', positiveRes, res, neg, zero, positive)
+
+// TWO SUM LEET CODE PROBLEM
+/**
+* @param {number[]} nums
+* @param {number} target
+* @return {number[]}
+*/
+let sum = 0
+let res1 = []
+var twoSum = function (nums, target) {
+    nums.map((item, index, array) => {
+        array.map((newItem, i) => {
+            if (index !== i) {
+                if (item[index] + newItem[i] === target) {
+                    return [index, i]
+                }
+            }
+
+        })
+    })
+};
+// // const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+const nums = [2, 7, 11, 15]
+const target = 9
+// // ws.write(res)
+console.log('two sum is', twoSum(nums, target))
+
+var twoSum1 = function (nums, target) {
+    for (let i = 0; i <= nums.length; i++) {
+        for (let j = 0; j <= nums.length; j++) {
+            if (i !== j) {
+                if (nums[i] + nums[j] === target) {
+                    return [i, j];
+                }
+            }
+        }
+    }
+};
+console.log(twoSum1([3, 2, 4], 6));
+
+/**
+* @param {number} x
+* @return {boolean}
+*/
+let re = []
+var isPalindrome = function (x) {
+    let t = String(x)?.split(''); // ['1','2','1']
+    console.log('tttt', t)
+    for (let i = t.length; i >= 0; i--) {
+        re.push(t[i])
+    }
+    console.log('reee', re)
+    let res = re.join('')
+    console.log('res', Number(res), x)
+    // if (x > 0) {
+    if (Number(res) === x) {
+        return true
+    } else {
+        return false
+    }
+    // } else {
+    //     return false
+    // }
+
+
+};
+console.log(isPalindrome(0));
+
+// const db = document.getElementById('debounce')
+// const th = document.getElementById('throttle')
+// let thC = 0;
+// let dbC = 0;
+// let timeOut;
+// window.addEventListener('resize', () => {
+//     // throttle 
+//     setTimeout(() => {
+//         thC++;
+//         th.innerHTML = `throttle count is ${thC}`
+//     }, [1000])
+
+//     // debounce
+//     clearTimeout(timeOut)
+//     timeOut = setTimeout(() => {
+//         dbC++;
+//         db.innerHTML = `debounce counrt is ${dbC}`
+//     }, [1000])
+// })
+
+// MERGE SORTED ARRAY
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
+let a = []
+let b = []
+var merge = function (nums1, m, nums2, n) {
+    for (let i = 0; i < nums1.length; i++) {
+        if (nums1[i] !== 0) {
+            a.push(nums1[i])
+            console.log('aaya', nums1[i])
+        }
+    }
+    for (let j = 0; j < nums2.length; j++) {
+        if (nums2[j] !== 0) {
+            a.push(nums2[j])
+        }
+    }
+   
+
+
+    return a.sort()
+};
+console.log('merge', merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
+
+
+var removeElement = function(nums, val) {
+    let newArr = []
+       for(let i = 0;i<nums.length;i++) {
+           if(nums[i] !== val){
+   
+           newArr.push(nums[i])
+           }
+       }
+       return newArr
+   };
+   console.log('nx', removeElement([0,1,2,2,3,0,4,2], 2))
