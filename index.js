@@ -194,3 +194,52 @@ var removeElement = function(nums, val) {
        return newArr
    };
    console.log('nx', removeElement([0,1,2,2,3,0,4,2], 2))
+
+   var removeDuplicates = function(nums) {
+    if (nums.length === 0) return 0;
+    
+    let uniqueIndex = 0;
+    
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[uniqueIndex]) {
+            uniqueIndex++;
+            nums[uniqueIndex] = nums[i];
+        }
+    }
+    
+    return uniqueIndex + 1;
+};
+
+let nums1 = [1,1,2];
+let k = removeDuplicates(nums1);
+console.log('k:', k, 'nums1:', nums1);
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function (nums) {
+    let r = 0;
+    if (nums.length === 1) return nums.length;
+
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 0; j < nums.length; j++) {
+            // if (i !== j) {
+                if (nums[i] === nums[j]) {
+                    r++;
+                    // a = nums[i]
+                    console.log('rva',r)
+                    return nums[i]
+                }
+            // }
+
+        }
+
+    }
+    // return r
+
+};
+let r1 = majorityElement([8,8,7,7,7]);
+let r = majorityElement([6,6,6,7,7]);
+console.log('r:', r);
+console.log('r1:', r1);
