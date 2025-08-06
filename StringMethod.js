@@ -21,3 +21,11 @@ console.log(str.toString())
 let number = 123123323
 console.log(number.toString())
 
+
+let obj = {
+    name:'ashu',
+    age:24
+}
+// convert obj to string
+console.log(obj, JSON.stringify(obj))
+
