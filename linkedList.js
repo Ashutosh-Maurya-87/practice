@@ -67,6 +67,20 @@ class LinkedList {
         prevNode.next = temp.next
         this.size--
     }
+
+    removeAtHead(index) {
+        if (this.size === 0) return 'List already empty'
+        // let temp = this.head
+
+        // if (index === 0) {
+        this.head = this.head.next
+        // }
+        this.size--
+    }
+
+    searchNode(data) {
+
+    }
 }
 
 let obj = new LinkedList
@@ -74,8 +88,9 @@ obj.insertAtHead(43)
 obj.insertAtHead(53)
 obj.insertAtHead(63)
 obj.insertAtHead(73)
-obj.insertAtIndex(1, 5)
-obj.removeAtIndex(3)
-// console.log(obj.removeAtIndex(0,5))
+// obj.insertAtIndex(1, 5)
+obj.removeAtIndex(0)
+// obj.removeAtHead()
+// console.log(obj.removeAtHead(1))
 console.log(obj.print())
 console.log(obj)
