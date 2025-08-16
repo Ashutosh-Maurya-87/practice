@@ -79,6 +79,29 @@ class LinkedList {
     }
 
     searchNode(data) {
+        let temp = this.head
+        let searchNode = null
+        if (temp.data === data) {
+            searchNode = temp
+        }
+        return -1
+    }
+
+    updateAtindex(index, data) {
+        if (index < 0 || index > this.size) return 'Invalid index'
+
+        let temp = this.head
+
+        if (index === 0) {
+            temp.data = data
+            // this.insertAtHead(data)
+            return;
+        }
+
+        for (let i = 0; i < index; i++) {
+            temp = temp.next
+        }
+        temp.data = data
 
     }
 }
@@ -92,5 +115,6 @@ obj.insertAtHead(73)
 obj.removeAtIndex(0)
 // obj.removeAtHead()
 // console.log(obj.removeAtHead(1))
+obj.updateAtindex(0, 99)
 console.log(obj.print())
 console.log(obj)
