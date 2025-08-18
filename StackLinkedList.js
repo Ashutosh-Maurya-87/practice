@@ -20,6 +20,7 @@ class StackedLinkedList {
     }
 
     pop() {
+        if(this.size === 0) return 'Empty stack'
         let item = this.top.data
         this.top = this.top.next
         this.size--
@@ -27,6 +28,7 @@ class StackedLinkedList {
     }
 
     peak() {
+        if(this.size === 0) return null
         let peakItem = this.top.data
         return peakItem
     }
@@ -38,5 +40,5 @@ obj.push(55)
 obj.push(45)
 obj.push(456)
 obj.pop()
-console.log(obj.peak())
+console.log(obj.peak(), obj.pop())
 console.log(obj)
