@@ -79,11 +79,19 @@ class LinkedList {
     }
 
     searchNode(data) {
-        let temp = this.head
-        let searchNode = null
-        if (temp.data === data) {
-            searchNode = temp
+        if (this.size === 0) return ' List is empty'
+        let current = this.head
+        let index = 0
+        while (current) {
+            if (current.data === data) {
+                return index
+            }
+            index++
+            current = current.next
+
         }
+
+
         return -1
     }
 
@@ -116,5 +124,6 @@ obj.removeAtIndex(0)
 // obj.removeAtHead()
 // console.log(obj.removeAtHead(1))
 obj.updateAtindex(0, 99)
+console.log(obj.searchNode(99))
 console.log(obj.print())
 console.log(obj)
