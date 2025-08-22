@@ -1,6 +1,6 @@
 const FirstOcc = (s1, s2) => {
-    let match = true
-    for (let i = 0; i < s1.length - s2.length; i++) {
+    for (let i = 0; i <= s1.length - s2.length; i++) {
+        let match = true
         for (let j = 0; j < s2.length; j++) {
             if (s1[i + j] !== s2[j]) {
                 match = false
