@@ -1,5 +1,6 @@
 const SortColors = (nums) => {
 
+    // using normal in-placed
     // for (let i = 0; i < nums.length; i++) {
     //     for (let j = 0; j < nums.length; j++) {
     //         if (nums[i] < nums[j]) {
@@ -8,6 +9,8 @@ const SortColors = (nums) => {
     //     }
     // }
     // return nums
+
+    // using selection sort in-placed
     for (let i = 0; i < nums.length; i++) {
         let min = i
         for (let j = i + 1; j < nums.length; j++) {
