@@ -17,6 +17,7 @@ const MajorityElement = (arr) => {
     for (let num of arr) {
         if (num === maj) { occ++ }
     }
+    console.log(occ)
     let res = occ > Math.floor((arr.length) / 2) ? maj : -1
     // console.log(count, res)
     return res
@@ -24,4 +25,5 @@ const MajorityElement = (arr) => {
 // its n/2 time algo like if any number occur arr.lenght/2 time then it will return
 //  that number is majority otherwirse not
 console.log(MajorityElement([3, 2, 3, 3, 4, 4, 4, 5, 5, 5, 5, 4, 4, 3, 2, 8]))
-console.log(MajorityElement([3, 2, 2, 2, 2, 2, 3, 3, 3, 1, 2]))
+console.log(MajorityElement([3, 2, 2, 2, 2, 2, 3, 3, 3, 1]))
+console.log(MajorityElement([3, 2, 2, 2, 2, 2, 3, 3, 3, 1, 3, 3, 3]))
