@@ -41,9 +41,15 @@ class BST {
 }
 
 const bst = new BST()
+// inserted value in the left
 bst.makeTree(20)
 bst.makeTree(10)
 bst.makeTree(5)
+// inserted value in the right
+bst.makeTree(25)
+bst.makeTree(23)
+bst.makeTree(35)
+
 // console.log()
 console.log()
 console.log(bst.isEmpty())
